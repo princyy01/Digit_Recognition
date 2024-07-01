@@ -1,15 +1,22 @@
-In this project, we propose a Convolutional Neural Network (CNN) architecture for digit recognition using the popular MNIST dataset.
-The MNIST dataset consists of 28x28 grayscale images of handwritten digits (0-9) and is widely used as a benchmark dataset in the field of machine learning.
+This project involves building a Convolutional Neural Network (CNN) using TensorFlow and Keras to classify handwritten digits from the MNIST dataset.
 
-Model Architecture:
-1. Input Layer: The input layer consists of 28x28 grayscale images of handwritten digits.
-2. Convolutional Layers: The convolutional layers apply learnable filters to extract features from the input images. We use multiple convolutional layers with increasing numbers of filters to capture hierarchical features.
-3. Pooling Layers: Pooling layers downsample the feature maps obtained from convolutional layers, reducing the spatial dimensions while retaining important information.
-4. Fully Connected Layers: The flattened output from the last convolutional or pooling layer is fed into fully connected layers. These layers perform classification based on the learned features.
-5. Output Layer: The output layer consists of 10 neurons corresponding to the 10 digit classes (0-9). We use softmax activation to obtain the probability distribution over the classes.
 
-Training Procedure:
-1. Data Preprocessing: Normalize the pixel values of the input images to a range between 0 and 1.
-2. Model Compilation: Compile the CNN model using the Adam optimizer and categorical cross-entropy loss function.
-3. Model Training: Train the model on the training set, adjusting the weights based on backpropagation and gradient descent.
-4. Model Evaluation: Evaluate the trained model on a separate test set to assess its performance in terms of accuracy and other metrics.
+## Introduction
+
+This project demonstrates the use of a CNN to classify handwritten digits from the MNIST dataset. The dataset consists of 60,000 training images and 10,000 testing images of handwritten digits (0-9).
+
+## Dataset
+
+The MNIST dataset is a classic dataset in the field of machine learning and computer vision. It contains grayscale images of handwritten digits, each of size 28x28 pixels.
+
+## Model Architecture
+
+The CNN model is built using TensorFlow and Keras and consists of the following layers:
+
+- Convolutional Layer with 64 filters and a kernel size of 3x3, followed by ReLU activation and MaxPooling
+- Convolutional Layer with 32 filters and a kernel size of 3x3, followed by ReLU activation and MaxPooling
+- Convolutional Layer with 32 filters and a kernel size of 3x3, followed by ReLU activation
+- Flatten Layer to reshape the output before feeding it into a Dense Layer
+- Dense Layer with 64 units and ReLU activation
+- Dense Layer with 32 units and ReLU activation
+- Output Dense Layer with 10 units and softmax activation
